@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def events(request):
     '''
-    users_events = fetch_json(id=None)
+    users_events = fetch_json()
     '''
 
     context = {
@@ -14,7 +14,7 @@ def events(request):
 
 def event_details(request, event_id):
     '''
-    users_events = fetch_json(id=event_id)
+    users_events = fetch_json(event_id=event_id)
     '''
     context = {
         # 'users_events': users_events,
