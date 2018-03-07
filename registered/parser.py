@@ -8,10 +8,10 @@ def parse_json(event_id=None):
         for event in raw_data:
             if event is not None:
                 obj.append([
-                        str(event['id']),
-                        str(event['name']),
-                        str(len(event['participants'])),
-                    ])
+                                str(event['id']),
+                                str(event['name']),
+                                str(len(event['participants'])),
+                        ])
                 # print(event['name'], len(event['participants']))
     else:
         # print(raw_data['name'])
@@ -21,8 +21,8 @@ def parse_json(event_id=None):
             # print(participant_obj[participant]['name'])
             participant_list.append(str(participant_obj[participant]['name']))
         obj.append([
-                str(raw_data['name']),
-                participant_list
+                        str(raw_data['name']),
+                        participant_list
         ])
 
     print(obj)
