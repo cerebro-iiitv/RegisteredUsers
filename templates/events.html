@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cerebro-2018 Technical Festival</title>
+</head>
+<body>
+
+<h1>Event List:</h1>
+<h3>Along with the number of participants</h3>
+<ul type="1">
+{% for event in users_events %}
+    <li><a href="{% url 'event-single' event.0 %}"><h4> {{ event.1 }}</h4></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of Participants: {{ event.2 }} </li>
+    <br/>
+{% endfor %}
+</ul>
+</body>
+</html>

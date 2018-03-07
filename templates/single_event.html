@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+<h2>{{ name }}' Participants:</h2>
+<ul type="1">
+    {% for participant in participants %}
+    <li>{{ participant }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
