@@ -25,10 +25,10 @@ def parse_json(event_id=None):
                         participant_list
         ])
 
-    print(obj)
+    # print(obj)
     return obj
 
 
-tmp = parse_json(0)
-print(tmp[0][0])
-print(tmp[0][1])
+# tmp = parse_json(0)
+# print(tmp[0][0])
+# print(tmp[0][1])
