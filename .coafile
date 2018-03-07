@@ -1,0 +1,4 @@
+[python spacing]
+files = manage.py, registered/**.py, RegisteredUsers/**.py
+bears = PEP8Bear, SpaceConsistencyBear
+use_spaces = False
