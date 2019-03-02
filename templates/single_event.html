@@ -6,10 +6,17 @@
 </head>
 <body>
 <h2>{{ name }}' Participants:</h2>
-<ul type="1">
+<table border="1px">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
     {% for participant in participants %}
-    <li>{{ participant }}</li>
+    <tr>
+        <td>{{ participant.0 }}</td>
+        <td>{{ participant.1 }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from registered import fetch
+from RegisteredUsers.settings import PARTICIPANTS_LIST
 
 
 def parse_json(event_id=None):
@@ -14,12 +15,16 @@ def parse_json(event_id=None):
                         ])
                 # print(event['name'], len(event['participants']))
     else:
-        # print(raw_data['name'])
         participant_list = []
         participant_obj = raw_data['participants']
         for participant in participant_obj:
-            # print(participant_obj[participant]['name'])
-            participant_list.append(str(participant_obj[participant]['name']))
+            # print(participant_obj[participant]['uid'] in PARTICIPANTS_LIST)
+            if participant_obj[participant]['uid'] in PARTICIPANTS_LIST:
+                temp = PARTICIPANTS_LIST[participant_obj[participant]['uid']].get('phone', None)
+                # print(temp)
+                participant_list.append([ str(participant_obj[participant]['name']), str(temp)])
+            else:
+                participant_list.append([ str(participant_obj[participant]['name']), 'Not Given'])
         obj.append([
                         str(raw_data['name']),
                         participant_list
@@ -29,6 +34,7 @@ def parse_json(event_id=None):
     return obj
 
 
-# tmp = parse_json(0)
+tmp = parse_json(0)
+# print(tmp)
 # print(tmp[0][0])
 # print(tmp[0][1])
